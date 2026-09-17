@@ -1,49 +1,31 @@
-import { Analytics } from '@vercel/analytics/next'
-import type { Metadata, Viewport } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { AppealProvider } from "@/lib/appeal-context";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: 'Votable — Restoring the Right to Vote',
-  description: 'A calm, independent civic-information guide for India’s SIR electoral-roll appeal process.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
-}
+  title: "Votable — Restoring the Right to Vote",
+  description:
+    "Check your SIR electoral roll status and understand your appeal options. An independent civic-information prototype by Team Coddify.",
+};
 
-export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-[#F7F2EB] text-[#2D2D2D] font-sans">
+        <AppealProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </AppealProvider>
       </body>
     </html>
-  )
+  );
 }
