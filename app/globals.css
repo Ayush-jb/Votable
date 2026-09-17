@@ -97,12 +97,15 @@
 
 /* Print styles for petition */
 @media print {
+  html, body {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+
   .print\:hidden {
     display: none !important;
-  }
-  
-  body {
-    background: white !important;
   }
   
   nav, footer {
@@ -111,5 +114,6 @@
   
   main {
     padding: 0 !important;
+    display: block !important;
   }
 }

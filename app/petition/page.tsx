@@ -40,8 +40,8 @@ export default function PetitionPage() {
   };
 
   return (
-    <div className="bg-[#F7F2EB] min-h-screen">
-      <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-12">
+    <div className="bg-[#F7F2EB] min-h-screen print:bg-white print:min-h-0">
+      <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-12 print:p-0 print:m-0 print:max-w-none">
         {/* Progress - hidden in print */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -71,7 +71,7 @@ export default function PetitionPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-8"
+          className="mb-8 print:mb-0"
         >
           <PetitionPreview ref={printRef} data={appealFormData} />
         </motion.div>
