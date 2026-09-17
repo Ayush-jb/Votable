@@ -98,27 +98,35 @@
 /* Print styles for petition */
 @media print {
   @page {
-    size: A4;
+    size: A4 portrait;
     margin: 15mm;
   }
 
-  html, body {
-    height: auto !important;
-    min-height: auto !important;
-    overflow: visible !important;
-    background: white !important;
+  body * {
+    visibility: hidden;
   }
 
-  .print\:hidden {
-    display: none !important;
-  }
-  
-  nav, footer {
-    display: none !important;
-  }
-  
-  main {
+  html, body {
+    background: transparent !important;
+    margin: 0 !important;
     padding: 0 !important;
-    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  #printable-petition, #printable-petition * {
+    visibility: visible;
+  }
+
+  #printable-petition {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 210mm !important; /* Strict A4 width */
+    max-width: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
   }
 }

@@ -26,8 +26,9 @@ export const PetitionPreview = forwardRef<HTMLDivElement, PetitionPreviewProps>(
 
     return (
       <div
+        id="printable-petition"
         ref={ref}
-        className="bg-white border border-[#EAE2D6] rounded-xl p-8 sm:p-12 shadow-sm max-w-3xl mx-auto text-[15px] leading-relaxed print:p-0 print:border-none print:shadow-none print:max-w-[190mm] print:mx-auto print:text-[14px] print:leading-snug"
+        className="bg-white border border-[#EAE2D6] rounded-xl p-8 sm:p-12 shadow-sm max-w-3xl mx-auto text-[15px] leading-relaxed print:p-0 print:border-none print:shadow-none print:max-w-[210mm] print:w-[210mm] print:mx-auto print:text-[14px] print:leading-snug"
         style={{ fontFamily: "'Times New Roman', Times, serif", color: "#000" }}
       >
         <div className="mb-6">
