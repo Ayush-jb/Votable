@@ -97,6 +97,11 @@
 
 /* Print styles for petition */
 @media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
   html, body {
     height: auto !important;
     min-height: auto !important;

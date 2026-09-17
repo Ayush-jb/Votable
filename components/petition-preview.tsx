@@ -27,7 +27,7 @@ export const PetitionPreview = forwardRef<HTMLDivElement, PetitionPreviewProps>(
     return (
       <div
         ref={ref}
-        className="bg-white border border-[#EAE2D6] rounded-xl p-8 sm:p-12 shadow-sm max-w-3xl mx-auto text-[15px] leading-relaxed print:p-0 print:border-none print:shadow-none print:max-w-none print:w-full print:text-black"
+        className="bg-white border border-[#EAE2D6] rounded-xl p-8 sm:p-12 shadow-sm max-w-3xl mx-auto text-[15px] leading-relaxed print:p-0 print:border-none print:shadow-none print:max-w-[190mm] print:mx-auto print:text-[14px] print:leading-snug"
         style={{ fontFamily: "'Times New Roman', Times, serif", color: "#000" }}
       >
         <div className="mb-6">
@@ -79,7 +79,7 @@ export const PetitionPreview = forwardRef<HTMLDivElement, PetitionPreviewProps>(
           </p>
         </div>
 
-        <div className="flex justify-end mt-16 mb-16">
+        <div className="flex justify-end mt-16 mb-16 print:mt-12 print:mb-8">
           <div className="text-center">
             <p className="mb-10 text-right">Yours faithfully,</p>
             <p>(Signature of the Applicant)</p>
