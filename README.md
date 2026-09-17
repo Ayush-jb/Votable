@@ -1,4 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Votable - Restoring the Right to Vote
+
+**Votable** is a civic-information web application designed around the Special Intensive Revision (SIR) electoral-roll appeal process in India. It helps voters check whether their EPIC ID is present in the SIR dataset and guides them through the preparation needed to appeal a wrongful exclusion.
+
+Built for a Hackathon by **Team Coddify**.
+
+## Features
+
+- **Voter Search:** Instantly look up a voter by EPIC Number and Name to determine inclusion or exclusion status.
+- **Dynamic Appeal Info:** Automatically identifies the correct Appellate Authority (District Election Officer) and tribunal address based on the voter's constituency.
+- **Document Checklist:** Enforces mandatory legal documentation required for the appeal process based on real ECI guidelines.
+- **Petition Generation:** Automatically generates a formatted, print-ready legal petition (under Section 24a of the RP Act, 1950) that can be submitted to the local tribunal.
+
+## Tech Stack
+
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+
+## Getting Started
+
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Demo Data
+
+This application currently runs on a mock dataset for demonstration purposes. Try testing the flow with the following credentials:
+
+- **Included Voter:** EPIC `WBDEMO001`, Name `Arjun Sharma`
+- **Excluded Voter:** EPIC `WBDEMO002`, Name `Priya Das`
+
+*(Note: While the voter records are simulated, the tribunal locations, official designations, and document requirements are based on 100% real-world data.)*
 
 ## Getting Started
 
